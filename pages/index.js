@@ -24,13 +24,13 @@ export default function Index({ allPosts, preview }) {
               coverImage={heroPost.coverImage}
               date={heroPost.date}
               author={heroPost.author}
-              slug={heroPost.slug}
+              slug={heroPost.slug} 
               excerpt={heroPost.excerpt}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
-      </Layout>
+      </Layout> 
     </>
   )
 }
