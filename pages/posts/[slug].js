@@ -13,24 +13,30 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import Form from '../../components/form'
+import Intro from '../../components/intro'
+import { useEffect, useState } from 'react'
+import Disqus from '../../components/disqus/Disqus'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
+      <Intro />
+     
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
+        <Container>
             <article>
+              {console.log(post,'23223323223')}
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title}
                 </title>
                 {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
@@ -42,15 +48,19 @@ export default function Post({ post, morePosts, preview }) {
               />
               <PostBody content={post.body} />
             </article>
+        </Container>
 
-            <Comments comments={post.comments} />
-            <Form _id={post._id} />
+        <div className="disqusMargin">
+          <Container>
+            <Disqus slug={post.slug}/>
+          </Container>
+        </div>
 
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <Container>
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Container>
           </>
         )}
-      </Container>
     </Layout>
   )
 }
