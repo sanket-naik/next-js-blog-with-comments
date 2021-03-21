@@ -33,7 +33,6 @@ export default function Post({ post, morePosts, preview }) {
           <>
         <Container>
             <article>
-              {console.log(post,'23223323223')}
               <Head>
                 <title>
                   {post.title}

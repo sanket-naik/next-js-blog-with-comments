@@ -12,17 +12,16 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div>
+    <div className="card">
       <div className="mb-5">
         <CoverImage slug={slug} title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+      <h3 className="text-3xl mb-3 leading-snug cardHeader">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author?.name} picture={author?.picture} dateString={date} />
+      <Avatar className="avtrCard" name={author?.name} picture={author?.picture} dateString={date} />
     </div>
   )
 }
