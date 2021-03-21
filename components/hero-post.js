@@ -20,7 +20,7 @@ export default function HeroPost({
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
-              <a className="hover:underline">{title}</a>
+              <span style={{cursor:'pointer'}} className="hover:underline">{title}</span>
             </Link>
           </h3>
         </div>

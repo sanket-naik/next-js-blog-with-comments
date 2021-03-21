@@ -37,14 +37,14 @@ export default function Share(props) {
                  <LinkedinIcon size={36} round={true}/>
               </LinkedinShareButton>
             </div>
-            <div className="px-1">
+            {/* <div className="px-1">
               <TwitterShareButton 
                 url={url}
                 title={props.title}
                 via={"LOGO"}>
                  <TwitterIcon size={36} round={true}/>
               </TwitterShareButton>
-            </div>
+            </div> */}
             <div className="px-1">
               <WhatsappShareButton 
                 url={url}

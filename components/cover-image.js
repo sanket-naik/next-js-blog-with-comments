@@ -4,7 +4,7 @@ import { imageBuilder } from '../lib/sanity'
 
 export default function CoverImage({ title, url, imageObject, slug }) {
   const image = (
-    <img
+    <img 
       width={1240}
       height={540}
       alt={`Cover Image for ${title}`}
@@ -17,7 +17,7 @@ export default function CoverImage({ title, url, imageObject, slug }) {
     <div className="-mx-5 sm:mx-0">
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a aria-label={title}>{image}</a>
+          <span style={{cursor:'pointer'}} aria-label={title}>{image}</span>
         </Link>
       ) : (
         image
