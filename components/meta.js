@@ -21,7 +21,7 @@ export default function Meta() {
         sizes="16x16"
         href="/favicon/favicon-16x16.png"
       />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
+      <link rel="manifest" href="/favicon/site.webmanifest" /> 
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"
@@ -34,7 +34,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and Sanity.io.`}
+        content={`Bleedinginks has everything you need to know about tech news. You will find here valuable information about programming`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>

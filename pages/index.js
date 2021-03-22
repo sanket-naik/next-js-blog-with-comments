@@ -10,11 +10,11 @@ import { CMS_NAME } from '../lib/constants'
 export default function Index({ allPosts, preview }) {
   const heroPost = allPosts[0] 
   const morePosts = allPosts.slice(1)
-  return (
+  return ( 
     <> 
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Read a blog - Bleedinginks.com</title>
         </Head>
         <Intro />
         <Container>
