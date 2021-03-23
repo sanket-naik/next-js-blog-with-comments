@@ -13,13 +13,13 @@ export default function Meta() {
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="https://res.cloudinary.com/dlmozkbdc/image/upload/v1616432306/SkillSchool/icon-min_gpijxi.png"
+        href="https://res.cloudinary.com/dlmozkbdc/image/upload/v1616471100/SkillSchool/icon-min_gpijxi-removebg-preview_rhaxpv.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="https://res.cloudinary.com/dlmozkbdc/image/upload/v1616432306/SkillSchool/icon-min_gpijxi.png"
+        href="https://res.cloudinary.com/dlmozkbdc/image/upload/v1616471100/SkillSchool/icon-min_gpijxi-removebg-preview_rhaxpv.png"
       />
       <link rel="manifest" href="/favicon/site.webmanifest" /> 
       <link
