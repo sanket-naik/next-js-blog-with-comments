@@ -11,7 +11,6 @@ const { title, coverImage, date, author }=props
 
   return (
     <>
-    {console.log(props)}
       <PostTitle>{title}</PostTitle> 
       <div className="hidden md:flex md:mb-12 avt">
         <div><Avatar name={author?.name} picture={author?.picture} dateString={date}/></div>

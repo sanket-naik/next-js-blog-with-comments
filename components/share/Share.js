@@ -15,7 +15,6 @@ export default function Share(props) {
     const [url, seturl] = useState("")
 
     useEffect(() => {
-        console.log(props)
         seturl(window && window.location.href)
     }, [])
 
@@ -25,7 +24,7 @@ export default function Share(props) {
              <FacebookShareButton 
                 url={url}
                 quote={props.title}
-                hashtag="#camperstribe">
+                hashtag="#bleedinginks">
                  <FacebookIcon size={36} round={true}/>
               </FacebookShareButton>
             </div>

@@ -16,6 +16,7 @@ import Form from '../../components/form'
 import Intro from '../../components/intro'
 import { useEffect, useState } from 'react'
 import Disqus from '../../components/disqus/Disqus'
+import Meta from '../../components/meta'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -33,12 +34,11 @@ export default function Post({ post, morePosts, preview }) {
           <>
         <Container>
             <article>
-              <Head>
-                <title>
-                  {post.title}
-                </title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
-              </Head>
+              <Meta
+                  title={post.title}
+                  url={`https://bleedinginks.com/posts/${post.slug}`}
+                  image={post.coverImage}
+                />
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
