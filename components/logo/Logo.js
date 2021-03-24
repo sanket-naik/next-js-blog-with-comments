@@ -5,7 +5,7 @@ export default function Logo() {
     return (
             <div className="">
                  <Link href="/">
-                  <img alt="logo" className="logostyle" src="https://res.cloudinary.com/dlmozkbdc/image/upload/v1616350009/SkillSchool/bleedinginks_4_xpmtao.svg"/>
+                  <img alt="logo" className="logostyle" src="https://res.cloudinary.com/dlmozkbdc/image/upload/v1616396429/SkillSchool/BleedingInkPng_bgtkeb.png"/>
                  </Link>
             </div>
         )
