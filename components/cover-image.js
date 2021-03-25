@@ -9,7 +9,7 @@ export default function CoverImage({ title, url, imageObject, slug, from }) {
       // width={1240}
       // height={540}
       alt={`Cover Image for ${title}`}
-      className={`${from=="hero" && "heropst"}`}
+      className={`${from=="hero" ? "heropst":"otherstr"}`}
       src={imageBuilder(imageObject).width(1240).height(540).url()}
     />
   )

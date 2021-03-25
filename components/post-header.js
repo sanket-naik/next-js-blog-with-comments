@@ -12,7 +12,7 @@ const { title, coverImage, date, author }=props
   return (
     <>
       <PostTitle>{title}</PostTitle> 
-      <div className="hidden md:flex md:mb-12 avt">
+      <div className="hidden md:flex md:mb-6 avt">
         <div><Avatar name={author?.name} picture={author?.picture} dateString={date}/></div>
         <div className="my-auto" style={{marginLeft:'auto'}}><Share/></div>
       </div>

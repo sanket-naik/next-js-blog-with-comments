@@ -4,7 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
  
 const LazyImage = ({ src, alt, style, height, width, className, onClick }) => (
-  <div>
     <LazyLoadImage
       src={src}
       alt={alt?alt:'img'}
@@ -14,7 +13,6 @@ const LazyImage = ({ src, alt, style, height, width, className, onClick }) => (
       onClick={onClick}
       effect="blur"
     />
-  </div>
 );
  
 export default LazyImage
