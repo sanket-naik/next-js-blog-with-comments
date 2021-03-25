@@ -14,10 +14,10 @@ export default async function createComment(req, res) {
       _type: 'comment',
       post: {
         _type: 'reference',
-        _ref: _id,
+        _ref: _id, 
       },
       name,
-      email,
+      email, 
       comment
     })
   } catch (err) {

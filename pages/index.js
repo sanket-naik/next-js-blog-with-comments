@@ -14,7 +14,7 @@ export default function Index({ allPosts, preview, allCategories }) {
   return ( 
     <> 
       <Layout preview={preview}>
-        <Intro />
+        <Intro /> 
         <Container>
           {heroPost && allCategories && (
             <HeroPost
