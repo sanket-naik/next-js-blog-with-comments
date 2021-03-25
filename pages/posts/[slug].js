@@ -8,7 +8,7 @@ import PostHeader from '../../components/post-header'
 import Comments from '../../components/comments'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import { getAllPostsWithSlug, getPostAndMorePosts, getCategory } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
@@ -18,7 +18,7 @@ import { useEffect, useState } from 'react'
 import Disqus from '../../components/disqus/Disqus'
 import Meta from '../../components/meta'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts, preview, categories:allCategories }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -56,7 +56,7 @@ export default function Post({ post, morePosts, preview }) {
         </div>
 
         <Container>
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} allCategories={allCategories} />}
         </Container>
           </>
         )}
@@ -66,11 +66,13 @@ export default function Post({ post, morePosts, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview)
+  const categories = await getCategory()
   return {
     props: {
       preview,
       post: data?.post || null,
       morePosts: data?.morePosts || null,
+      categories
     },
     revalidate: 1
   }
