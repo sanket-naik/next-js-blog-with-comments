@@ -5,7 +5,9 @@ export default class Robots extends Component {
         res.setHeader("Content-Type", "text/plain");
         res.write(`User-agent: *
 Allow: /*
-Disallow: /api/*`);
+Disallow: /api/*
+
+Sitemap: https://bleedinginks.com/sitemap.xml`);
         res.end();
     }
 }
