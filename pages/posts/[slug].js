@@ -17,6 +17,7 @@ import Intro from '../../components/intro'
 import { useEffect, useState } from 'react'
 import Disqus from '../../components/disqus/Disqus'
 import Meta from '../../components/meta'
+import Loader from '../../components/loader/Loader'
 
 export default function Post({ post, morePosts, preview, categories:allCategories }) {
   const router = useRouter()
@@ -29,7 +30,7 @@ export default function Post({ post, morePosts, preview, categories:allCategorie
       <Intro />
      
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <Loader>Loading…</Loader>
         ) : (
           <>
         <Container>

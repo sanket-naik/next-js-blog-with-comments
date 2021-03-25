@@ -178,7 +178,38 @@ article a {
     display: none;
 }
 
+/* loading  */
 
+#loadingL {
+    -webkit-animation: rotation 2s infinite linear;
+    transition: rotation 2s infinite linear;
+    height: 55px !important;
+}
+
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+
+.Loader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Loader .loadertxt{
+     margin-top: auto;
+     margin-bottom: auto;
+     font-size: 18px;
+     color: #5e7c77;
+}
+
+/* loading end */
 
 
 @media(max-width:720px){
