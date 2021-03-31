@@ -8,32 +8,38 @@ import PostHeader from '../../components/post-header'
 import Comments from '../../components/comments'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import { getAllPostsWithSlug, getPostAndMorePosts, getCategory } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import Form from '../../components/form'
+import Intro from '../../components/intro'
+import { useEffect, useState } from 'react'
+import Disqus from '../../components/disqus/Disqus'
+import Meta from '../../components/meta'
+import Loader from '../../components/loader/Loader'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts, preview, categories:allCategories }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
+      <Intro />
+     
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <Loader>Loading…</Loader>
         ) : (
           <>
+        <Container>
             <article>
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
-              </Head>
+              <Meta
+                  title={post.title}
+                  url={`https://bleedinginks.com/posts/${post.slug}`}
+                  image={post.coverImage}
+                />
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
@@ -42,26 +48,32 @@ export default function Post({ post, morePosts, preview }) {
               />
               <PostBody content={post.body} />
             </article>
+        </Container>
 
-            <Comments comments={post.comments} />
-            <Form _id={post._id} />
+        <div className="disqusMargin">
+          <Container>
+            <Disqus slug={post.slug}/>
+          </Container>
+        </div>
 
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <Container>
+          {morePosts.length > 0 && <MoreStories posts={morePosts} allCategories={allCategories} />}
+        </Container>
           </>
         )}
-      </Container>
     </Layout>
   )
 }
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview)
+  const categories = await getCategory()
   return {
     props: {
       preview,
       post: data?.post || null,
       morePosts: data?.morePosts || null,
+      categories
     },
     revalidate: 1
   }
