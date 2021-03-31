@@ -36,7 +36,7 @@ export default function HeroPost({
           </div>
           <div className="cnthsis">
               <div className="catweb">
-                <div>{category && category.map((e,index)=><span className="catgry">{index!==0 && ","}{e}</span>)}</div>
+                <div>{category && category.map((e,index)=><span key={index} className="catgry">{index!==0 && ","}{e}</span>)}</div>
                 <div className="dateSys">&nbsp;-&nbsp;<Date dateString={date} /></div>
               </div>
               <div className="hero-title">
@@ -45,7 +45,7 @@ export default function HeroPost({
                 </Link>
               </div>
               <div className="catmob">
-                <div>{category && category.map((e,index)=><span className="catgry">{index!==0 && ","}{e}</span>)}</div>
+                <div>{category && category.map((e,index)=><span key={index} className="catgry">{index!==0 && ","}{e}</span>)}</div>
                 <div className="dateSys">&nbsp;-&nbsp;<Date dateString={date} /></div>
               </div>
               <div>

@@ -18,7 +18,7 @@ export default function PostPreview({
         <CoverImage slug={slug} title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
       </div>
       <div className="catweb">
-        <div>{category && category.map((e,index)=><span className="catgry">{index!==0 && ","}{e}</span>)}</div>
+        <div>{category && category.map((e,index)=><span key={index} className="catgry">{index!==0 && ","}{e}</span>)}</div>
         <div className="dateSys">&nbsp;-&nbsp;<Date dateString={date} /></div>
       </div>
       <h3 className="text-3xl mb-3 leading-snug cardHeader">
@@ -27,7 +27,7 @@ export default function PostPreview({
         </Link>
       </h3>
       <div className="catmob mb-3">
-        <div>{category && category.map((e,index)=><span className="catgry">{index!==0 && ","}{e}</span>)}</div>
+        <div>{category && category.map((e,index)=><span key={index} className="catgry">{index!==0 && ","}{e}</span>)}</div>
         <div className="dateSys">&nbsp;-&nbsp;<Date dateString={date} /></div>
       </div>
       <Avatar className="avtrCard" name={author?.name} picture={author?.picture} dateString={date} />
