@@ -85,7 +85,7 @@ export async function getStaticPaths() {
     paths:
       allPosts?.map((post) => ({
         params: {
-          slug: post.slug,
+          slug: post.slug, 
         },
       })) || [],
     fallback: true,
