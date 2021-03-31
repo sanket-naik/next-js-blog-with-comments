@@ -7,7 +7,7 @@ import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 export default function PostBody({ content }) {
 
   const serializers = {
-    types: {
+    types: { 
       exampleUsage: props => (
          <SyntaxHighlighter language={props.node.language} style={a11yDark}>
            {props.node.code}
