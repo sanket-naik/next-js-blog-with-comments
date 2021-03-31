@@ -58,9 +58,9 @@ export default {
       type: 'image',
       options: {hotspot: true}
     },
-    {
-      type: 'code',
-      name: 'exampleUsage',
-    }
+    // {
+    //   type: 'code',
+    //   name: 'exampleUsage',
+    // }
   ]
 }
