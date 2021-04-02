@@ -61,6 +61,10 @@ export default {
     {
       type: 'code',
       name: 'exampleUsage',
+    },
+    {
+      name: 'note',
+      type: 'note'
     }
   ]
 }
