@@ -18,6 +18,7 @@ import { useEffect, useState } from 'react'
 import Disqus from '../../components/disqus/Disqus'
 import Meta from '../../components/meta'
 import Loader from '../../components/loader/Loader'
+import ScrollLoader from '../../components/scrollLoader/ScrollLoader'
 
 export default function Post({ post, morePosts, preview, categories:allCategories }) {
   const router = useRouter()
@@ -27,7 +28,8 @@ export default function Post({ post, morePosts, preview, categories:allCategorie
 
   return (
     <Layout preview={preview}>
-      <Intro />
+        <Intro />
+        <ScrollLoader/>
      
         {router.isFallback ? (
           <Loader>Loading…</Loader>

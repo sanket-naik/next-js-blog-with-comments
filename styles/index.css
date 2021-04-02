@@ -11,7 +11,7 @@ article a {
 
 .Navigation{
     border-bottom: 1px solid rgb(207, 205, 205);
-    margin-bottom: 20px;
+  
 }
 
 .headerIcon{
@@ -255,3 +255,35 @@ article a {
 }
 
 iframe[src*="ads-iframe"] { display: none; }
+
+.scrollHead{
+    position: sticky;
+    top: -1px;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.scrollHead .header {
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; */
+  }
+  
+  .scrollHead .progress-container {
+    /* background-color: rgba(150, 150, 150, 0.6);
+    height: 10px;
+    width: 100%; */
+  }
+  
+  .scrollHead .progress-bar {
+    /* background-color: #2196f3; */
+    background: linear-gradient(to right, #861a54, #08a3dc, #b1c200, #e7c001, #ee9a16, #de1317, #861a54, #08a3dc, #b1c200, #e7c001, #ee9a16, #de1317, #861a54);;
+    height: 5px;
+    width: 0%;
+  }
+  
+  .scrollHead .content {
+    padding: 2em;
+  }
