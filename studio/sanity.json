@@ -14,8 +14,7 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/code-input",
-    "note-field"
+    "@sanity/code-input"
   ],
   "env": {
     "development": {
