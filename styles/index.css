@@ -287,3 +287,20 @@ iframe[src*="ads-iframe"] { display: none; }
   .scrollHead .content {
     padding: 2em;
   }
+
+
+  .CopyIcon{
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: -40px;
+    margin-right: 10px;
+    float: right;
+    width: fit-content;
+    font-size: 15px;
+    padding-top: 5px;
+  }
+
+  .CopyClicked{
+      /* color: green; */
+  }

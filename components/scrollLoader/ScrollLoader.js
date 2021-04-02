@@ -7,7 +7,10 @@ export default function ScrollLoader() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
                 scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
+            let pb=document.getElementById("progressBar")
+            if(pb && pb.style){
+                pb.style.width = scrolled + "%";
+            }
           }
           
           window.onscroll = function () {
