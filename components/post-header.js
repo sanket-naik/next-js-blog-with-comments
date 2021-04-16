@@ -19,7 +19,7 @@ const { title, coverImage, date, author }=props
       <div className="mb-8 md:mb-16 -mx-1 sm:mx-0">
         <CoverImage title={title} imageObject={coverImage} url={coverImage} />
       </div>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <div className="flex md:hidden mb-6">
           <div><Avatar name={author?.name} picture={author?.picture} dateString={date}/></div>
           <div className="my-auto" style={{marginLeft:'auto'}}><Share data={props}/></div>

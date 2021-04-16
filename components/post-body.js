@@ -25,7 +25,7 @@ export default function PostBody({ content }) {
 
   
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       <BlockContent blocks={content} serializers={serializers}  projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID} dataset={process.env.NEXT_PUBLIC_SANITY_DATASET} className={markdownStyles.markdown} />
     </div>
   )

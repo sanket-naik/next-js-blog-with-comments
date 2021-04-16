@@ -20,9 +20,9 @@ export default function ScrollLoader() {
 
     return (
         <div className="scrollHead">
-            <div class="header">
-                <div class="progress-container">
-                    <div class="progress-bar" id="progressBar"></div>
+            <div className="header">
+                <div className="progress-container">
+                    <div className="progress-bar" id="progressBar"></div>
                 </div>
             </div>
         </div>
